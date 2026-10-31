@@ -1,13 +1,13 @@
-﻿class AppStrings {
+class AppStrings {
   AppStrings._();
 
   static const Map<String, Map<String, String>> _localizedValues = {
     'en': {
-      'app_title': 'Ads',
-      'app_subtitle': 'Navanagari Ads',
-      'app_title_ta': 'Ads',
-      'app_brand': 'Ads',
-      'app_brand_sub': 'NAVANAGARI ADS',
+      'app_title': 'SamWin',
+      'app_subtitle': 'SamWin Info',
+      'app_title_ta': 'SamWin',
+      'app_brand': 'SamWin',
+      'app_brand_sub': 'SAMWIN INFO',
       'search_placeholder': 'Search properties...',
       'headline': 'Find Your Dream Land in Tenkasi',
       'subheadline': 'Verified DTCP plots, farmlands & luxury villas across Tenkasi & TN',
@@ -153,11 +153,11 @@
       'lang_tamil': 'தமிழ்',
     },
     'ta': {
-      'app_title': 'Ads',
-      'app_subtitle': 'Navanagari Ads',
-      'app_title_ta': 'Ads',
-      'app_brand': 'Ads',
-      'app_brand_sub': 'NAVANAGARI ADS',
+      'app_title': 'SamWin',
+      'app_subtitle': 'SamWin Info',
+      'app_title_ta': 'SamWin',
+      'app_brand': 'SamWin',
+      'app_brand_sub': 'SAMWIN INFO',
       'search_placeholder': 'சொத்து தேடுங்கள்...',
       'headline': 'தென்காசியில் உங்கள் கனவு நிலத்தைக் கண்டறியுங்கள்',
       'subheadline': 'சரிபார்க்கப்பட்ட DTCP மனை, விவசாய நிலம் & ஆடம்பர வீடுகள்',

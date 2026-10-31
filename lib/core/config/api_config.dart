@@ -9,7 +9,7 @@ class ApiConfig extends ChangeNotifier {
   static final ApiConfig instance = ApiConfig._();
   ApiConfig._();
 
-  String _serverUrl = 'https://ads.mithradigitalsolutions.com/api';
+  String _serverUrl = 'https://samwin.info/api';
   bool _isOnlineMode = true; // Connected directly to live production server
   bool _isCheckingConnection = false;
   String? _lastPingStatus;
@@ -25,8 +25,8 @@ class ApiConfig extends ChangeNotifier {
     try {
       final prefs = await SharedPreferences.getInstance();
       final savedUrl = prefs.getString(_keyServerUrl);
-      if (savedUrl == null || savedUrl.contains('tenkasidreams.com') || savedUrl.contains('navanagari.com')) {
-        _serverUrl = 'https://ads.mithradigitalsolutions.com/api';
+      if (savedUrl == null || savedUrl.contains('tenkasidreams.com') || savedUrl.contains('navanagari.com') || savedUrl.contains('mithradigitalsolutions.com')) {
+        _serverUrl = 'https://samwin.info/api';
         await prefs.setString(_keyServerUrl, _serverUrl);
       } else {
         _serverUrl = savedUrl;
