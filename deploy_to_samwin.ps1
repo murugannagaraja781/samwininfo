@@ -116,6 +116,12 @@ $filesToUpload = @(
 
     # Core API Backend
     @{ Local = "api\config.php";          Remote = "/api/config.php" },
+    @{ Local = "api\auth.php";            Remote = "/api/auth.php" },
+    @{ Local = "api\env.php";             Remote = "/api/env.php" },
+    @{ Local = "api\app_config.php";      Remote = "/api/app_config.php" },
+    @{ Local = "api\categories.php";      Remote = "/api/categories.php" },
+    @{ Local = "api\notifications.php";   Remote = "/api/notifications.php" },
+    @{ Local = "api\requirements.php";    Remote = "/api/requirements.php" },
     @{ Local = "api\init_db.php";         Remote = "/api/init_db.php" },
     @{ Local = "api\database.sql";        Remote = "/api/database.sql" },
     @{ Local = "api\properties.php";      Remote = "/api/properties.php" },
@@ -133,6 +139,9 @@ $filesToUpload = @(
     @{ Local = "api\ping.php";            Remote = "/api/ping.php" },
     @{ Local = "api\stats.php";           Remote = "/api/stats.php" },
     @{ Local = "api\events.php";          Remote = "/api/events.php" },
+    @{ Local = "api\fcm_service.php";     Remote = "/api/fcm_service.php" },
+    @{ Local = "api\seed_properties.php"; Remote = "/api/seed_properties.php" },
+    @{ Local = "api\remove_dummy_data.php"; Remote = "/api/remove_dummy_data.php" },
     @{ Local = "api\.htaccess";           Remote = "/api/.htaccess" },
     
     # Initial JSON Data fallback files
@@ -142,6 +151,17 @@ $filesToUpload = @(
     @{ Local = "api\data\payments.json";       Remote = "/api/data/payments.json" },
     @{ Local = "api\data\requirements.json";   Remote = "/api/data/requirements.json" }
 )
+
+# Dynamically include any remaining files in api directory
+if (Test-Path "$PSScriptRoot\api") {
+    Get-ChildItem -Path "$PSScriptRoot\api" -File | ForEach-Object {
+        $rel = "api\$($_.Name)"
+        $rem = "/api/$($_.Name)"
+        if ($_.Name -ne ".env" -and -not ($filesToUpload | Where-Object { $_.Local -eq $rel })) {
+            $filesToUpload += @{ Local = $rel; Remote = $rem }
+        }
+    }
+}
 
 # Also include branding images from assets/images if existing
 if (Test-Path "$PSScriptRoot\assets\images") {
