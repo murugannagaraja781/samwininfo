@@ -1,0 +1,1020 @@
+﻿<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SamWin - ரியல் எஸ்டேட் & விளம்பரங்கள் | SamWin Real Estate</title>
+  <meta name="description" content="SamWin Ads - நிலம், மனை, வீடு, தோட்டம் வாங்க விற்க சிறந்த விளம்பரத் தளம்.">
+  
+  <link rel="icon" type="image/png" href="assets/images/app_logo.png">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css?v=20260920_v3">
+</head>
+<body>
+
+  <div class="site-wrapper">
+
+    <!-- 1. OLX DESKTOP & MOBILE HEADER -->
+    <header class="site-header">
+      <div class="container-xl">
+        <div class="header-main-row">
+          
+          <!-- Top Row on Mobile: Brand Logo + Location + Actions -->
+          <div class="header-top-mobile-group">
+            <!-- Brand Logo -->
+            <a href="index.html" class="header-brand">
+              <img src="assets/images/app_logo.png" alt="SamWin Ads Logo" class="header-logo-img" onerror="this.style.display='none'; document.getElementById('brandFallback').style.display='flex';">
+              <div id="brandFallback" class="brand-text-block" style="display: none;">
+                <span class="brand-title">SamWin</span>
+                <span class="brand-subtitle">SAMWIN INFO</span>
+              </div>
+            </a>
+
+            <!-- Location Selector (OLX Style) -->
+            <div class="header-location-box" onclick="alert('தென்காசி, திருநெல்வேலி, குற்றாலம், சுரண்டை பகுதிகள் தேர்ந்தெடுக்கப்பட்டுள்ளது')">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span id="headerLocation" class="header-location-text">Tenkasi</span>
+              <span class="location-arrow">▼</span>
+            </div>
+          </div>
+
+          <!-- Wide Search Bar (OLX Style - Row 2 on Mobile) -->
+          <div class="header-search-bar">
+            <input type="text" class="header-search-input" id="searchInput" placeholder="வீடு, நிலம், தோட்டம், கடை தேடுங்கள்..." autocomplete="off">
+            <button class="header-search-btn" onclick="document.getElementById('searchInput').focus()" title="Search">
+              <svg style="width: 20px; height: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </button>
+          </div>
+
+          <!-- Header Right Actions -->
+          <div class="header-right-actions">
+            <button class="lang-btn" id="langToggleBtn" onclick="toggleLanguage()">English</button>
+            <button class="google-login-btn" id="headerLoginBtn" onclick="openGoogleLoginModal()">
+              <svg class="google-g-icon" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+              </svg>
+              <span id="userLoginText">Google Login</span>
+            </button>
+            <a href="/Ads.apk" download="Ads.apk" class="admin-nav-btn" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.4); color: #10b981; font-weight: 700;" title="ஆண்ட்ராய்டு செயலியை பதிவிறக்க (Download Android App)">
+              <span>📲</span>
+              <span class="admin-btn-text">App APK</span>
+            </a>
+            <a href="admin/" class="admin-nav-btn" title="Super Admin Dashboard">
+              <span>⚙️</span>
+              <span class="admin-btn-text">Admin</span>
+            </a>
+            <button class="btn-post-ad-olx" onclick="openPostAdModal()">
+              <span>+</span>
+              <span data-i18n="post_ad_title">விளம்பரம் பதிவிடு</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 2. OLX CATEGORIES RIBBON BAR -->
+      <nav class="categories-ribbon">
+        <div class="container-xl">
+          <div class="categories-ribbon-inner">
+            <button class="ribbon-all-btn" onclick="showAllCategories()">
+              <span data-i18n="sec_categories">அனைத்து வகைகள்</span>
+              <span>▼</span>
+            </button>
+            <a class="ribbon-link" onclick="selectCategory('house')">🏡 <span data-i18n="cat_house">வீடு / வில்லா</span></a>
+            <a class="ribbon-link" onclick="selectCategory('land')">📐 <span data-i18n="cat_land">நிலம் / மனை</span></a>
+            <a class="ribbon-link" onclick="selectCategory('farmland')">🌴 <span data-i18n="cat_farmland">தோட்டம்</span></a>
+            <a class="ribbon-link" onclick="selectCategory('shop')">🏪 <span data-i18n="cat_shop">கடை / வணிகம்</span></a>
+            <a class="ribbon-link" onclick="selectCategory('apartment')">🏢 <span data-i18n="cat_apartment">அபார்ட்மெண்ட்</span></a>
+            <a class="ribbon-link" onclick="selectCategory('rental')">🔑 <span data-i18n="cat_rental">வாடகைக்கு</span></a>
+            <a class="ribbon-link" onclick="openBuyerBoardModal()">
+              <span>📋 மக்களின் தேவை</span>
+              <span class="ribbon-badge-tool ribbon-badge-purple">புதியது</span>
+            </a>
+            <a class="ribbon-link" onclick="openCalculatorModal()">
+              <span>📐 நில அளவை மாற்றி</span>
+              <span class="ribbon-badge-tool ribbon-badge-green">அளவை</span>
+            </a>
+            <a class="ribbon-link" onclick="openLegalAdviceModal()">
+              <span>⚖️ லீகல் அட்வைஸ்</span>
+              <span class="ribbon-badge-tool" style="background: #1E1B4B; color: #F59E0B; font-weight: 800;">சட்டம்</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main style="flex: 1;">
+      
+      <!-- 3. HERO SHOWCASE & QUICK TOOLS SECTION (DESKTOP & MOBILE) -->
+      <section class="hero-showcase-section">
+        <div class="container-xl">
+          <div class="hero-desktop-grid">
+            
+            <!-- Left Hero Banner -->
+            <div class="hero-main-card" onclick="document.getElementById('searchInput').focus()">
+              <img src="assets/images/hero_banner.png" alt="SamWin Hero Banner" class="hero-main-img" onerror="this.style.display='none';">
+            </div>
+
+            <!-- Right Side Stacked Quick Tools -->
+            <div class="hero-side-tools">
+              <!-- Tool 1: மக்களின் தேவை (Buyer Demands Board) -->
+              <div class="side-tool-card card-buyer-demand" onclick="openBuyerBoardModal()">
+                <div class="side-tool-header">
+                  <div class="side-tool-icon">👥</div>
+                  <span class="side-tool-badge badge-yellow" data-i18n="badge_new">புதியது</span>
+                </div>
+                <div>
+                  <div class="side-tool-title" data-i18n="quick_buyer_title">மக்களின் தேவை (Buyer Board)</div>
+                  <div class="side-tool-sub" data-i18n="quick_buyer_sub">இடம் & வீடு தேவை பதிவுகள் மற்றும் வாங்குபவர்கள்</div>
+                </div>
+              </div>
+
+              <!-- Tool 2: நில அளவை மாற்றி (Land Unit Converter) -->
+              <div class="side-tool-card card-land-calc" onclick="openCalculatorModal()">
+                <div class="side-tool-header">
+                  <div class="side-tool-icon">📐</div>
+                  <span class="side-tool-badge badge-white" data-i18n="badge_calc">அளவை</span>
+                </div>
+                <div>
+                  <div class="side-tool-title" data-i18n="quick_calc_title">நில அளவை மாற்றி (Calculator)</div>
+                  <div class="side-tool-sub" data-i18n="quick_calc_sub">சென்ட், குழி, ஏக்கர், ஹெக்டேர், சதுர அடி நேரடி கணக்கீடு</div>
+                </div>
+              </div>
+
+              <!-- Tool 3: லீகல் அட்வைஸ் (Legal Advice) -->
+              <div class="side-tool-card card-legal-advice" onclick="openLegalAdviceModal()" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); color: white; border: 1px solid rgba(255,255,255,0.15);">
+                <div class="side-tool-header">
+                  <div class="side-tool-icon" style="background: rgba(255,255,255,0.15);">⚖️</div>
+                  <span class="side-tool-badge" style="background: #F59E0B; color: #78350F; font-weight: 800;">வழக்கறிஞர்</span>
+                </div>
+                <div>
+                  <div class="side-tool-title" style="color: white;">லீகல் அட்வைஸ் (Legal Advice)</div>
+                  <div class="side-tool-sub" style="color: rgba(255,255,255,0.8);">பத்திர சரிபார்ப்பு, பட்டா & வில்லங்க ஆய்வு</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. PHOTOGRAPHIC CATEGORIES STRIP (Balanced 6 Cards) -->
+      <section class="category-strip-section">
+        <div class="container-xl">
+          <div class="section-headline-row">
+            <div class="section-main-title">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 11h6V5H4v6zm0 8h6v-6H4v6zm8 0h6v-6h-6v6zm0-14v6h6V5h-6z"/></svg>
+              <span data-i18n="sec_categories">சொத்து வகைகள் (Explore Categories)</span>
+            </div>
+            <button class="lang-btn" onclick="showAllCategories()" data-i18n="sec_show_all">அனைத்தும் காட்டு</button>
+          </div>
+          <div class="category-strip-grid" id="categoryGrid">
+            <!-- Injected via JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. 100% VERIFICATION TRUST BANNER -->
+      <section class="trust-banner-section">
+        <div class="container-xl">
+          <div class="trust-banner-card">
+            <div class="trust-left">
+              <div class="trust-icon-box">🛡️</div>
+              <div>
+                <div class="trust-title" data-i18n="verify_title">100% சரிபார்க்கப்பட்ட நம்பகமான சொத்துக்கள்</div>
+                <div class="trust-sub" data-i18n="verify_subtitle">அனைத்து பத்திரங்களும் DTCP & பட்டா சரிபார்க்கப்பட்ட நேரடி சொத்துக்கள்</div>
+              </div>
+            </div>
+            <button class="trust-cta-btn" onclick="openPostAdModal()" data-i18n="verify_cta">இலவச விளம்பரம் போடுங்க ></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. FEATURED PROPERTIES SECTION (4-COLUMN DESKTOP GRID) -->
+      <section class="featured-showcase-section" id="featuredSection">
+        <div class="container-xl">
+          <div class="section-headline-row">
+            <div class="section-main-title">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              <span data-i18n="sec_featured">சிறப்புச் சொத்துகள் (Featured Properties)</span>
+            </div>
+            <span style="font-size: 12px; font-weight: 800; color: #D97706;" data-i18n="sec_hot">★ TOP RECOMMENDED</span>
+          </div>
+          <div class="featured-desktop-grid" id="featuredContainer">
+            <!-- Injected via JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FRESH RECOMMENDATIONS / MAIN PROPERTY FEED (4-COLUMN OLX GRID) -->
+      <section class="main-feed-section">
+        <div class="container-xl">
+          <div class="section-headline-row">
+            <div class="section-main-title" data-i18n="sec_latest">புதிய பரிந்துரைகள் (Fresh Recommendations)</div>
+            <div style="font-size: 13px; font-weight: 700; color: var(--text-secondary);" id="feedCount">கிடைப்பவை</div>
+          </div>
+          <div class="feed-grid-4col" id="latestGrid">
+            <!-- Injected via JavaScript -->
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 8. OLX DESKTOP FOOTER -->
+    <footer class="site-footer">
+      <div class="container-xl">
+        <div class="footer-top-grid">
+          
+          <!-- Col 1: Popular Locations -->
+          <div>
+            <div class="footer-col-title">பிரபலமான இடங்கள் (Locations)</div>
+            <ul class="footer-links-list">
+              <li><a onclick="filterByLocation('Tenkasi')">தென்காசி (Tenkasi)</a></li>
+              <li><a onclick="filterByLocation('Courtallam')">குற்றாலம் (Courtallam)</a></li>
+              <li><a onclick="filterByLocation('Surandai')">சுரண்டை (Surandai)</a></li>
+              <li><a onclick="filterByLocation('Shenkottai')">செங்கோட்டை (Shenkottai)</a></li>
+              <li><a onclick="filterByLocation('Sankarankovil')">சங்கரன்கோவில் (Sankarankovil)</a></li>
+              <li><a onclick="filterByLocation('Tirunelveli')">திருநெல்வேலி (Tirunelveli)</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 2: Categories -->
+          <div>
+            <div class="footer-col-title">சொத்து பிரிவுகள் (Categories)</div>
+            <ul class="footer-links-list">
+              <li><a onclick="selectCategory('land')">DTCP மனைகள் (Plots & Lands)</a></li>
+              <li><a onclick="selectCategory('house')">தனி வீடுகள் & வில்லா (Villas)</a></li>
+              <li><a onclick="selectCategory('farmland')">விவசாய நிலம் & தோட்டம் (Farmlands)</a></li>
+              <li><a onclick="selectCategory('shop')">வணிகக் கடைகள் (Shops & Commercial)</a></li>
+              <li><a onclick="selectCategory('apartment')">அபார்ட்மெண்ட் வீடுகள் (Apartments)</a></li>
+              <li><a onclick="selectCategory('rental')">வாடகை & லீஸ் வீடுகள் (Rentals)</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Quick Services & Legal -->
+          <div>
+            <div class="footer-col-title">சேவைகள் & சட்டம் (Policies)</div>
+            <ul class="footer-links-list">
+              <li><a onclick="openBuyerBoardModal()">மக்களின் தேவை (Buyer Demands)</a></li>
+              <li><a onclick="openCalculatorModal()">நில அளவை மாற்றி (Calculator)</a></li>
+              <li><a href="terms.html">📜 விதிமுறைகள் (Terms & Conditions)</a></li>
+              <li><a href="privacy.html">🔒 தனியுரிமைக் கொள்கை (Privacy Policy)</a></li>
+              <li><a href="refund.html">💳 ரீஃபண்ட் கொள்கை (Refund Policy)</a></li>
+              <li><a href="admin/">நிர்வாகம் (Super Admin Portal)</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: About & Contact -->
+          <div>
+            <div class="footer-col-title">SamWin (About Us)</div>
+            <p style="font-size: 12.5px; color: var(--olx-text-sec); line-height: 1.5; margin-bottom: 10px;">
+              தென்காசி மற்றும் சுற்றுவட்டார பகுதிகளில் நம்பகமான நில விற்பனையாளர்கள். 100% மூலப்பத்திரம் சரிபார்க்கப்பட்ட சொத்துக்கள்.
+            </p>
+            <div style="font-size: 12px; font-weight: 700; color: var(--olx-navy);">📞 தொலைபேசி: <a href="tel:+919894174944" style="color: inherit; text-decoration: none;">+91 98941 74944</a></div>
+            <div style="font-size: 12px; font-weight: 700; color: #25D366; margin-top: 4px;">💬 WhatsApp: <a href="https://wa.me/919894174944" target="_blank" style="color: inherit; text-decoration: none;">+91 98941 74944</a></div>
+            <div style="font-size: 12px; font-weight: 700; color: #002f34; margin-top: 4px;">✉️ மின்னஞ்சல்: <a href="mailto:tenkasidreams@gmail.com" style="color: inherit; text-decoration: none;">tenkasidreams@gmail.com</a></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div class="container-xl">
+          <div class="footer-bottom-inner">
+            <div>© 2026 SamWin Land Promoters. All Rights Reserved.</div>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; font-weight: 600;">
+              <a href="terms.html" style="color: inherit; text-decoration: underline;">Terms & Conditions</a>
+              <span>•</span>
+              <a href="privacy.html" style="color: inherit; text-decoration: underline;">Privacy Policy</a>
+              <span>•</span>
+              <a href="refund.html" style="color: inherit; text-decoration: underline;">Refund Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- 9. MOBILE STICKY BOTTOM NAVIGATION BAR (Visible on Mobile Only) -->
+    <nav class="mobile-bottom-nav">
+      <a href="index.html" class="nav-item active">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <span data-i18n="nav_home">முகப்பு</span>
+      </a>
+      <div class="nav-item" onclick="showFavorites()">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <span data-i18n="nav_favs">விருப்பங்கள்</span>
+      </div>
+      <div class="nav-post-ad-btn" onclick="openPostAdModal()" title="விளம்பரம் பதிவிடு">
+        +
+      </div>
+      <div class="nav-item" onclick="openBuyerBoardModal()">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+        <span data-i18n="nav_needs">தேவைகள்</span>
+      </div>
+      <a href="admin/" class="nav-item">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/></svg>
+        <span data-i18n="nav_admin">Admin</span>
+      </a>
+    </nav>
+
+  </div>
+
+  <!-- ================= INTERACTIVE MODALS ================= -->
+
+  <!-- 1. Property Details Modal -->
+  <div class="modal-overlay" id="propertyDetailModal">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <div class="modal-title">சொத்து முழு விவரம் (Property Details)</div>
+        <button class="modal-close-btn" onclick="closeModal('propertyDetailModal')">✕</button>
+      </div>
+      <div class="modal-body" id="propertyDetailBody">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Land Unit Calculator Modal -->
+  <div class="modal-overlay" id="calculatorModal">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <div class="modal-title">📐 நில அளவை மாற்றி (Land Unit Calculator)</div>
+        <button class="modal-close-btn" onclick="closeModal('calculatorModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="calc-input-group">
+          <label>நில அளவு மதிப்பு உள்ளிடவும் (Enter Land Value):</label>
+          <input type="number" id="calcInputVal" value="5" step="any">
+        </div>
+        <div class="calc-input-group">
+          <label>அளவை அலகு (Select Unit):</label>
+          <select id="calcInputUnit">
+            <option value="cent" selected>சென்ட் (Cent)</option>
+            <option value="kuzhi">குழி (Kuzhi)</option>
+            <option value="acre">ஏக்கர் (Acre)</option>
+            <option value="ground">கிரவுண்ட் (Ground)</option>
+            <option value="hectare">ஹெக்டேர் (Hectare)</option>
+            <option value="sqft">சதுர அடி (Sq.Ft)</option>
+          </select>
+        </div>
+
+        <table class="calc-results-table">
+          <tr><td>சென்ட் (Cent)</td><td id="resCent">5.00</td></tr>
+          <tr><td>குழி (Kuzhi)</td><td id="resKuzhi">15.13</td></tr>
+          <tr><td>ஏக்கர் (Acre)</td><td id="resAcre">0.0500</td></tr>
+          <tr><td>கிரவுண்ட் (Ground)</td><td id="resGround">0.91</td></tr>
+          <tr><td>ஹெக்டேர் (Hectare)</td><td id="resHectare">0.0202</td></tr>
+          <tr><td>சதுர அடி (Sq.Ft)</td><td id="resSqft">2,178.0</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Buyer Requirements Board Modal -->
+  <div class="modal-overlay" id="buyerBoardModal">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <div class="modal-title">📋 மக்களின் தேவை (Buyer Demands Board)</div>
+        <button class="modal-close-btn" onclick="closeModal('buyerBoardModal')">✕</button>
+      </div>
+      <div class="modal-body" id="buyerBoardList">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Post Free Ad Modal -->
+  <div class="modal-overlay" id="postAdModal">
+    <div class="modal-sheet">
+      <div class="modal-header">
+        <div class="modal-title">➕ 100% இலவச விளம்பரம் பதிவிடுக (Post Free Ad)</div>
+        <button class="modal-close-btn" onclick="closeModal('postAdModal')">✕</button>
+      </div>
+      <div class="modal-body">
+        <!-- 100% Free & Admin Approval Notice -->
+        <div style="background: linear-gradient(135deg, #ECFDF5, #E0F2FE); border: 1px solid #A7F3D0; border-radius: 8px; padding: 12px 14px; margin-bottom: 16px; font-size: 13px; color: #065F46; display: flex; align-items: flex-start; gap: 10px;">
+          <span style="font-size: 22px; line-height: 1;">💚</span>
+          <div>
+            <strong style="color: #047857;">100% முற்றிலும் இலவச சேவை!</strong><br>
+            உங்கள் சொத்தை கட்டணமின்றி இலவசமாக விளம்பரம் செய்யலாம். போலி பதிவுகளைத் தவிர்த்து பாதுகாப்பை உறுதிசெய்ய, <strong>சூப்பர் அட்மின் (Super Admin) சரிபார்த்து ஒப்புதல் (Approve)</strong> அளித்தவுடன் உங்கள் விளம்பரம் முகப்புப் பக்கத்தில் நேரலையாக அனைவருக்கும் தோன்றும்.
+          </div>
+        </div>
+
+        <form id="postAdForm" onsubmit="handlePostAdSubmit(event)">
+          <!-- 1. Who is posting -->
+          <div class="post-form-row">
+            <label>யார் பதிவு செய்கிறீர்கள்? (Who is posting?)*</label>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;">
+              <label class="poster-type-pill" style="display: flex; align-items: center; justify-content: center; gap: 4px; padding: 8px 4px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; text-align: center;">
+                <input type="radio" name="posterType" value="Owner" checked style="accent-color: #002f34;">
+                <span>உரிமையாளர்</span>
+              </label>
+              <label class="poster-type-pill" style="display: flex; align-items: center; justify-content: center; gap: 4px; padding: 8px 4px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; text-align: center;">
+                <input type="radio" name="posterType" value="Promoter" style="accent-color: #002f34;">
+                <span>புரோமோட்டர்</span>
+              </label>
+              <label class="poster-type-pill" style="display: flex; align-items: center; justify-content: center; gap: 4px; padding: 8px 4px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; text-align: center;">
+                <input type="radio" name="posterType" value="Builder" style="accent-color: #002f34;">
+                <span>பில்டர்</span>
+              </label>
+              <label class="poster-type-pill" style="display: flex; align-items: center; justify-content: center; gap: 4px; padding: 8px 4px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; text-align: center;">
+                <input type="radio" name="posterType" value="Agent" style="accent-color: #002f34;">
+                <span>ஏஜென்ட்</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="post-form-row">
+            <label>சொத்து வகை (Category)*</label>
+            <select name="propertyType" id="postPropertyTypeSelect" onchange="handlePropertyTypeChange(this.value)" style="font-weight: 700;">
+              <option value="House">🏡 வீடு / தனி வீடு / வில்லா (House & Villa)</option>
+              <option value="Land">📐 நிலம் / மனை (Land / Plot)</option>
+              <option value="Farmland">🌴 தோட்டம் / விவசாயம் (Farmland)</option>
+              <option value="Shop">🏪 கடை / வணிகம் (Shop)</option>
+              <option value="Apartment">🏢 அபார்ட்மெண்ட் (Apartment)</option>
+              <option value="Rental">🔑 வாடகைக்கு / லீஸ் (Rental)</option>
+            </select>
+          </div>
+
+          <!-- DEDICATED HOUSE (வீடு) SPECIFIC FIELDS ACCORDING TO HANDWRITTEN NOTE -->
+          <div id="houseSpecificSection" style="background: #F0F9FF; border: 1.5px solid #BAE6FD; border-radius: 12px; padding: 14px; margin-bottom: 16px;">
+            <div style="font-size: 13.5px; font-weight: 800; color: #0369A1; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+              <span>🏡</span> வீடு சிறப்பம்சங்கள் (House Details)
+            </div>
+
+            <div class="post-form-row" style="margin-bottom: 12px;">
+              <label style="color: #0369A1;">வீட்டின் வகை (House Sub-Category)*</label>
+              <select name="houseSubType" id="postHouseSubTypeSelect" style="border-color: #7DD3FC;">
+                <option value="தனி வீடு">தனி வீடு (Independent House / Villa)</option>
+                <option value="கெஸ்ட் House">கெஸ்ட் House (Guest House)</option>
+                <option value="பண்ணை வீடு">பண்ணை வீடு (Farm House)</option>
+                <option value="குடிசை வீடு">குடிசை வீடு (Hut / Kudisai)</option>
+                <option value="நத்தம் பட்டா வீடு">நத்தம் பட்டா வீடு (Natham Patta House)</option>
+                <option value="ஓட்டு வீடு">ஓட்டு வீடு (Tiled Roof House)</option>
+                <option value="Un-Approved வீடு">Un-Approved வீடு (Unapproved House)</option>
+                <option value="பஞ்சாயத்து / DTCP அப்ரூவல்">பஞ்சாயத்து / DTCP அப்ரூவல் வீடு (Approved House)</option>
+                <option value="Finance வீடு">Finance வீடு (Bank Finance / Loan House)</option>
+              </select>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+              <div>
+                <label style="font-size: 12px; font-weight: 700; color: #0369A1;">படுக்கையறை (BHK)*</label>
+                <select name="houseBhk" style="border-color: #7DD3FC; padding: 8px;">
+                  <option value="1">1 BHK</option>
+                  <option value="2" selected>2 BHK</option>
+                  <option value="3">3 BHK</option>
+                  <option value="4">4 BHK</option>
+                  <option value="5">5+ BHK</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 700; color: #0369A1;">கட்டிட அளவு (Built Sq.Ft)*</label>
+                <input type="number" name="builtAreaSqFt" placeholder="1200" style="border-color: #7DD3FC; padding: 8px;">
+              </div>
+            </div>
+
+            <div class="post-form-row" style="margin-bottom: 12px;">
+              <label style="color: #0369A1;">வீட்டு நிலை (House Status / Stage)*</label>
+              <select name="houseStatus" style="border-color: #7DD3FC;">
+                <option value="Complete (முழுமை பெற்றது)">✅ முழுமை பெற்றது (Complete / Ready to Move)</option>
+                <option value="Incomplete (கட்டுமானத்தில் உள்ளது)">🏗️ கட்டுமானத்தில் உள்ளது (Under Construction)</option>
+                <option value="Working (பராமரிப்பில் உள்ளது)">🛠️ பராமரிப்பில் உள்ளது (Working / Renovation)</option>
+              </select>
+            </div>
+
+            <div class="post-form-row" style="margin-bottom: 12px;">
+              <label style="color: #0369A1;">முக்கிய வசதிகள் & இணைப்புகள்</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 12px;">
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" name="houseAmenities" value="போர்வெல்" checked style="accent-color: #0284C7;"> போர்வெல்
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" name="houseAmenities" value="வீட்டு நல்லி (குடிநீர் இணைப்பு)" checked style="accent-color: #0284C7;"> வீட்டு நல்லி (குடிநீர்)
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" name="houseAmenities" value="EB மின் இணைப்பு" checked style="accent-color: #0284C7;"> EB மின் இணைப்பு
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" name="houseAmenities" value="காம்பவுண்ட் சுவர்" checked style="accent-color: #0284C7;"> காம்பவுண்ட் சுவர்
+                </label>
+              </div>
+            </div>
+
+            <div class="post-form-row">
+              <label style="color: #0369A1;">வீட்டு வாசல் திசை (Facing)</label>
+              <select name="facing" style="border-color: #7DD3FC;">
+                <option value="கிழக்கு (East)">கிழக்கு (East)</option>
+                <option value="வடக்கு (North)">வடக்கு (North)</option>
+                <option value="தெற்கு (South)">தெற்கு (South)</option>
+                <option value="மேற்கு (West)">மேற்கு (West)</option>
+                <option value="வடகிழக்கு (North-East)">வடகிழக்கு (North-East)</option>
+                <option value="தென்கிழக்கு (South-East)">தென்கிழக்கு (South-East)</option>
+                <option value="கார்னர் வீடு">கார்னர் வீடு (Corner House)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- DEDICATED LAND (நிலம் / மனை) SPECIFIC FIELDS ACCORDING TO HANDWRITTEN NOTE -->
+          <div id="landSpecificSection" style="display: none; background: #F0FDF4; border: 1.5px solid #BBF7D0; border-radius: 12px; padding: 14px; margin-bottom: 16px;">
+            <div style="font-size: 13.5px; font-weight: 800; color: #047857; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+              <span>🌾</span> நிலம் / பிளாட் விவரங்கள் (Land & Plot Details)
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+              <div>
+                <label style="font-size: 12px; font-weight: 700; color: #047857;">நில அளவு (Area Value)*</label>
+                <input type="number" step="any" name="landAreaValue" id="landAreaValueInput" placeholder="10" value="10" style="border-color: #86EFAC; padding: 8px;">
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 700; color: #047857;">அளவை அலகு (Unit)*</label>
+                <select name="landUnit" id="landUnitSelect" style="border-color: #86EFAC; padding: 8px;">
+                  <option value="Cent" selected>சென்ட் (Cent)</option>
+                  <option value="Acre">ஏக்கர் (Acre)</option>
+                  <option value="Kuzhi">குழி (Kuzhi)</option>
+                  <option value="Sq.Ft">சதுர அடி (Sq.Ft)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="post-form-row" style="margin-bottom: 12px;">
+              <label style="color: #047857;">நில அங்கீகாரம் (Approval Status)*</label>
+              <select name="landApproval" style="border-color: #86EFAC;">
+                <option value="DTCP Approved">① DTCP Approved (DTCP அப்ரூவல் மனை)</option>
+                <option value="RERA Approved">② RERA Approved (RERA அப்ரூவல் மனை)</option>
+                <option value="Panchayat Approved">③ Panchayat Approved (பஞ்சாயத்து அப்ரூவல் மனை)</option>
+                <option value="Unapproved">④ UnApproval (அப்ரூவல் இல்லாதது / நத்தம் பட்டா இடம்)</option>
+              </select>
+            </div>
+
+            <div class="post-form-row" style="margin-bottom: 12px;">
+              <label style="color: #047857;">வங்கி கடன் வசதி (Finance / Bank Loan)*</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                <label style="display: flex; align-items: center; justify-content: center; gap: 6px; padding: 8px; border: 1.5px solid #86EFAC; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; background: #ECFDF5; color: #047857;">
+                  <input type="radio" name="landFinance" value="Yes" checked style="accent-color: #047857;">
+                  <span>① இருக்கு (Loan OK)</span>
+                </label>
+                <label style="display: flex; align-items: center; justify-content: center; gap: 6px; padding: 8px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; background: white; color: #475569;">
+                  <input type="radio" name="landFinance" value="No" style="accent-color: #047857;">
+                  <span>② இல்லை (No Loan)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="post-form-row" style="margin-bottom: 12px;">
+              <label style="color: #047857;">நில நிலை & முக்கிய வசதிகள் (Land Amenities)</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 12px;">
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" name="landAmenities" value="போர்வெல்" checked style="accent-color: #047857;"> 💧 போர்வெல்
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" name="landAmenities" value="EB மின் இணைப்பு" checked style="accent-color: #047857;"> ⚡ EB மின் இணைப்பு
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" name="landAmenities" value="தார் ரோடு வசதி" checked style="accent-color: #047857;"> 🛣️ தார் ரோடு வசதி
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" name="landAmenities" value="கம்பி வேலி / காம்பவுண்ட்" checked style="accent-color: #047857;"> 🧱 கம்பி / முள்வேலி
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" name="landAmenities" value="கிணறு / குடிநீர் வசதி" style="accent-color: #047857;"> 🚰 கிணறு / குடிநீர்
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" name="landAmenities" value="நஞ்சை நிலம்" style="accent-color: #047857;"> 🌾 நஞ்சை நிலம்
+                </label>
+              </div>
+            </div>
+
+            <div class="post-form-row">
+              <label style="color: #047857;">நிலம் பார்க்கும் திசை (Facing)</label>
+              <select name="landFacing" style="border-color: #86EFAC;">
+                <option value="கிழக்கு (East)">கிழக்கு (East)</option>
+                <option value="வடக்கு (North)">வடக்கு (North)</option>
+                <option value="தெற்கு (South)">தெற்கு (South)</option>
+                <option value="மேற்கு (West)">மேற்கு (West)</option>
+                <option value="வடகிழக்கு (North-East)">வடகிழக்கு (North-East)</option>
+                <option value="தென்கிழக்கு (South-East)">தென்கிழக்கு (South-East)</option>
+                <option value="கார்னர் பிளாட் (Corner Plot)">கார்னர் பிளாட் (Corner Plot)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- DEDICATED FARMLAND (தோட்டம்) SPECIFIC FIELDS ACCORDING TO HANDWRITTEN NOTE -->
+          <div id="farmSpecificSection" style="display: none; background: #F0FDF4; border: 1.5px solid #86EFAC; border-radius: 12px; padding: 14px; margin-bottom: 16px;">
+            <div style="font-size: 13.5px; font-weight: 800; color: #166534; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+              <span>🌴</span> தோட்டம் & விவசாய நில விவரங்கள் (Farmland Details)
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+              <div>
+                <label style="font-size: 12px; font-weight: 700; color: #166534;">தோட்ட அளவு (Farm Area)*</label>
+                <input type="number" step="any" name="farmAreaValue" id="farmAreaValueInput" placeholder="2" value="2" style="border-color: #86EFAC; padding: 8px;">
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 700; color: #166534;">அளவை அலகு (Unit)*</label>
+                <select name="farmUnit" id="farmUnitSelect" style="border-color: #86EFAC; padding: 8px;">
+                  <option value="Acre" selected>ஏக்கர் (Acre)</option>
+                  <option value="Cent">சென்ட் (Cent)</option>
+                  <option value="Kuzhi">குழி (Kuzhi)</option>
+                  <option value="Sq.Ft">சதுர அடி (Sq.Ft)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="post-form-row" style="margin-bottom: 12px;">
+              <label style="color: #166534;">நீர் & மின்சார வசதி (Water & Free Agri EB)*</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 12px;">
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" name="farmWaterEb" value="போர்வெல்" checked style="accent-color: #166534;"> 💧 போர்வெல் (Borewell)
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" name="farmWaterEb" value="இலவச விவசாய EB" checked style="accent-color: #166534;"> ⚡ இலவச விவசாய EB (Free)
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" name="farmWaterEb" value="கிணறு" checked style="accent-color: #166534;"> 🚰 கிணறு (Open Well)
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px;">
+                  <input type="checkbox" name="farmWaterEb" value="கமர்ஷியல் EB" style="accent-color: #166534;"> 💡 கமர்ஷியல் EB
+                </label>
+              </div>
+            </div>
+
+            <div class="post-form-row" style="margin-bottom: 12px;">
+              <label style="color: #166534;">தோட்டத்தில் மரங்கள் உள்ளதா? (Trees / Plantation)*</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px;">
+                <label style="display: flex; align-items: center; justify-content: center; gap: 6px; padding: 6px; border: 1.5px solid #86EFAC; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; background: #ECFDF5; color: #166534;">
+                  <input type="radio" name="hasTrees" value="Yes" checked style="accent-color: #166534;">
+                  <span>ஆம் (மரங்கள் உண்டு)</span>
+                </label>
+                <label style="display: flex; align-items: center; justify-content: center; gap: 6px; padding: 6px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; background: white; color: #475569;">
+                  <input type="radio" name="hasTrees" value="No" style="accent-color: #166534;">
+                  <span>இல்லை (வெறும் நிலம்)</span>
+                </label>
+              </div>
+              <input type="text" name="treesDetail" placeholder="உதா: 120 தென்னை மரங்கள், 15 மாமரம், 5 தேக்கு" style="border-color: #86EFAC; padding: 8px; font-size: 12.5px;">
+            </div>
+
+            <div class="post-form-row" style="margin-bottom: 12px;">
+              <label style="color: #166534;">மாத மகசூல் வருமானம் உள்ளதா? (Yield / Monthly Income)*</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px;">
+                <label style="display: flex; align-items: center; justify-content: center; gap: 6px; padding: 6px; border: 1.5px solid #86EFAC; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; background: #ECFDF5; color: #166534;">
+                  <input type="radio" name="hasIncome" value="Yes" checked style="accent-color: #166534;">
+                  <span>ஆம் (வருமானம் உண்டு)</span>
+                </label>
+                <label style="display: flex; align-items: center; justify-content: center; gap: 6px; padding: 6px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; background: white; color: #475569;">
+                  <input type="radio" name="hasIncome" value="No" style="accent-color: #166534;">
+                  <span>இல்லை</span>
+                </label>
+              </div>
+              <input type="text" name="incomeDetail" placeholder="உதா: மாதம் ₹45,000 தேங்காய் & பால் மகசூல்" style="border-color: #86EFAC; padding: 8px; font-size: 12.5px;">
+            </div>
+
+            <div class="post-form-row">
+              <label style="color: #166534;">தோட்டம் பார்க்கும் திசை (Facing)</label>
+              <select name="farmFacing" style="border-color: #86EFAC;">
+                <option value="கிழக்கு (East)">கிழக்கு (East)</option>
+                <option value="வடக்கு (North)">வடக்கு (North)</option>
+                <option value="தெற்கு (South)">தெற்கு (South)</option>
+                <option value="மேற்கு (West)">மேற்கு (West)</option>
+                <option value="வடகிழக்கு (North-East)">வடகிழக்கு (North-East)</option>
+                <option value="தென்கிழக்கு (South-East)">தென்கிழக்கு (South-East)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- DEDICATED APARTMENT (அபார்ட்மெண்ட்) SPECIFIC FIELDS ACCORDING TO HANDWRITTEN NOTE -->
+          <div id="apartmentSpecificSection" style="display: none; background: #EFF6FF; border: 1.5px solid #93C5FD; border-radius: 12px; padding: 14px; margin-bottom: 16px;">
+            <div style="font-size: 13.5px; font-weight: 800; color: #1D4ED8; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+              <span>🏢</span> அபார்ட்மெண்ட் விவரங்கள் (Apartment Details)
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 12px;">
+              <div>
+                <label style="font-size: 12px; font-weight: 700; color: #1D4ED8;">BHK*</label>
+                <select name="aptBhk" style="border-color: #93C5FD; padding: 8px;">
+                  <option value="1">1 BHK</option>
+                  <option value="2" selected>2 BHK</option>
+                  <option value="3">3 BHK</option>
+                  <option value="4">4 BHK</option>
+                  <option value="5">5+ BHK</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 700; color: #1D4ED8;">Sq.Ft*</label>
+                <input type="number" name="aptAreaSqFt" placeholder="1050" value="1050" style="border-color: #93C5FD; padding: 8px;">
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 700; color: #1D4ED8;">UDS Cent*</label>
+                <input type="text" name="aptUds" placeholder="1.2 Cent" value="1.2 Cent" style="border-color: #93C5FD; padding: 8px;">
+              </div>
+            </div>
+
+            <div class="post-form-row" style="margin-bottom: 12px;">
+              <label style="color: #1D4ED8;">லிஃப்ட் வசதி (Lift / Elevator)*</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                <label style="display: flex; align-items: center; justify-content: center; gap: 6px; padding: 8px; border: 1.5px solid #93C5FD; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; background: #DBEAFE; color: #1D4ED8;">
+                  <input type="radio" name="aptLift" value="Yes" checked style="accent-color: #1D4ED8;">
+                  <span>🛗 லிஃப்ட் உண்டு (Lift Available)</span>
+                </label>
+                <label style="display: flex; align-items: center; justify-content: center; gap: 6px; padding: 8px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; background: white; color: #475569;">
+                  <input type="radio" name="aptLift" value="No" style="accent-color: #1D4ED8;">
+                  <span>லிஃப்ட் இல்லை (No Lift)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="post-form-row" style="margin-bottom: 12px;">
+              <label style="color: #1D4ED8;">அபார்ட்மெண்ட் அப்ரூவல் (Approval)*</label>
+              <select name="aptApproval" style="border-color: #93C5FD;">
+                <option value="CMDA / DTCP Approved">① CMDA / DTCP Approved</option>
+                <option value="RERA Approved">② RERA Approved</option>
+                <option value="Unapproved">③ UnApproved</option>
+              </select>
+            </div>
+
+            <div class="post-form-row" style="margin-bottom: 12px;">
+              <label style="color: #1D4ED8;">தண்ணீர் வசதி (Water Facility)*</label>
+              <select name="aptWater" style="border-color: #93C5FD;">
+                <option value="Bore + Govt Water (இரண்டும்)">💧 Bore Water + Government Water (இரண்டும்)</option>
+                <option value="Bore Water">💧 போர்வெல் மட்டும் (Bore Water)</option>
+                <option value="Government Water">🚰 நகராட்சி குடிநீர் மட்டும் (Govt Water)</option>
+              </select>
+            </div>
+
+            <div class="post-form-row">
+              <label style="color: #1D4ED8;">மெயின் டோர் திசை (Facing)</label>
+              <select name="aptFacing" style="border-color: #93C5FD;">
+                <option value="கிழக்கு (East)">கிழக்கு (East)</option>
+                <option value="வடக்கு (North)">வடக்கு (North)</option>
+                <option value="தெற்கு (South)">தெற்கு (South)</option>
+                <option value="மேற்கு (West)">மேற்கு (West)</option>
+                <option value="வடகிழக்கு (North-East)">வடகிழக்கு (North-East)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- DEDICATED RENTAL (வாடகை சொத்து) SPECIFIC FIELDS ACCORDING TO HANDWRITTEN NOTE -->
+          <div id="rentalSpecificSection" style="display: none; background: #FFF7ED; border: 1.5px solid #FDBA74; border-radius: 12px; padding: 14px; margin-bottom: 16px;">
+            <div style="font-size: 13.5px; font-weight: 800; color: #C2410C; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;">
+              <span>🔑</span> வாடகை சொத்து விவரங்கள் (Rental & Lease Details)
+            </div>
+
+            <div class="post-form-row" style="margin-bottom: 12px;">
+              <label style="color: #C2410C;">வாடகை சொத்து வகை (Sub-Category from Boxes)*</label>
+              <select name="rentalSubType" id="postRentalSubTypeSelect" style="border-color: #FDBA74; font-weight: 700;">
+                <option value="வீடு (House)">🏡 வீடு (House for Rent)</option>
+                <option value="கடை (Shop)">🏪 கடை (Shop for Rent)</option>
+                <option value="Complex (வணிக வளாகம்)">🏢 Complex (Commercial Complex)</option>
+                <option value="காலி இடம் (Vacant Land)">📐 காலி இடம் (Vacant Land for Lease)</option>
+                <option value="தோட்டம் (குத்தகைக்கு)">🌴 தோட்டம் (குத்தகைக்கு - Farmland Lease)</option>
+                <option value="Business (வணிக இடம்)">🏭 Business (Industrial / Commercial Space)</option>
+                <option value="அலுவலகம் (Office)">💼 அலுவலகம் (Office Space)</option>
+              </select>
+            </div>
+
+            <div class="post-form-row" style="margin-bottom: 12px;">
+              <label style="color: #C2410C;">வாடகை முறை (Rent or Lease)*</label>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                <label style="display: flex; align-items: center; justify-content: center; gap: 6px; padding: 8px; border: 1.5px solid #FDBA74; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; background: #FFEDD5; color: #C2410C;">
+                  <input type="radio" name="rentalPlanType" value="Rent" checked style="accent-color: #C2410C;">
+                  <span>மாத வாடகை (Monthly Rent)</span>
+                </label>
+                <label style="display: flex; align-items: center; justify-content: center; gap: 6px; padding: 8px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; background: white; color: #475569;">
+                  <input type="radio" name="rentalPlanType" value="Lease" style="accent-color: #C2410C;">
+                  <span>முழு லீஸ் (Full Lease / ஒத்தி)</span>
+                </label>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+              <div>
+                <label style="font-size: 12px; font-weight: 700; color: #C2410C;">அட்வான்ஸ் முன்பணம் ₹ (Advance)*</label>
+                <input type="number" name="rentalAdvance" placeholder="50000" value="50000" style="border-color: #FDBA74; padding: 8px;">
+              </div>
+              <div>
+                <label style="font-size: 12px; font-weight: 700; color: #C2410C;">மாத வாடகை / லீஸ் தொகை ₹*</label>
+                <input type="number" name="rentalMonthlyAmount" placeholder="8500" value="8500" style="border-color: #FDBA74; padding: 8px;">
+              </div>
+            </div>
+          </div>
+
+          <div class="post-form-row">
+            <label>விளம்பரத் தலைப்பு (Title)*</label>
+            <input type="text" name="title" id="postAdTitleInput" required placeholder="உதா: 2 BHK தனி வீடு - 1200 Sq.Ft விற்பனைக்கு">
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;" class="post-form-row">
+            <div>
+              <label>விலை ₹ (Price)*</label>
+              <input type="number" name="price" required placeholder="உதா: 3500000">
+            </div>
+            <div>
+              <label>விலை முறை</label>
+              <select name="priceType">
+                <option value="Negotiable">பேசிக்கலாம் (Negotiable)</option>
+                <option value="Fixed">நிலையானது (Fixed)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="post-form-row">
+            <label>நில அளவு மதிப்பு & அலகு (Land Area)</label>
+            <div style="display: flex; gap: 8px;">
+              <input type="number" name="landUnitValue" placeholder="3" style="width: 50%;">
+              <select name="landUnit" style="width: 50%;">
+                <option value="Cent">சென்ட் (Cent)</option>
+                <option value="Sq.Ft">ச.அடி (Sq.Ft)</option>
+                <option value="Kuzhi">குழி (Kuzhi)</option>
+                <option value="Acre">ஏக்கர் (Acre)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="post-form-row">
+            <label>இடம் / ஊர் / Google Map லேண்ட்மார்க்*</label>
+            <input type="text" name="location" required placeholder="உதா: பாவூர்சத்திரம், தென்காசி">
+          </div>
+
+          <div class="post-form-row">
+            <label>விற்பனையாளர் பெயர் & தொடர்பு செல்போன் எண்*</label>
+            <div style="display: flex; gap: 8px;">
+              <input type="text" name="sellerName" required placeholder="உங்கள் பெயர்" style="width: 50%;">
+              <input type="tel" name="sellerPhone" required placeholder="98941 74944" style="width: 50%;">
+            </div>
+          </div>
+
+          <div class="post-form-row">
+            <label>புகைப்பட முகவரி (Photo URL - விருப்பத்தேர்வு)</label>
+            <input type="url" name="imageUrl" placeholder="https://... (வீட்டின் புகைப்படம் இருந்தால் உள்ளிடவும்)">
+          </div>
+
+          <div class="post-form-row">
+            <label>விளக்கம் (Description)</label>
+            <textarea name="description" placeholder="போர்வெல், குடிநீர் வசதி, ரோடு அணுகுமுறை, பட்டா விவரங்களை உள்ளிடவும்..."></textarea>
+          </div>
+          <button type="submit" class="post-submit-btn" id="submitPostAdBtn">✨ 100% இலவசமாக விளம்பரம் பதிவிடு (Submit Free Ad)</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Post Ad Success Confirmation Modal -->
+  <div class="modal-overlay" id="postAdSuccessModal">
+    <div class="modal-sheet" style="max-width: 480px; text-align: center;">
+      <div style="padding: 24px 16px;">
+        <div style="font-size: 54px; margin-bottom: 12px;">🎉</div>
+        <h3 style="font-size: 20px; font-weight: 800; color: #065F46; margin-bottom: 8px;">100% இலவச விளம்பரம் சமர்ப்பிக்கப்பட்டது!</h3>
+        <p style="font-size: 14px; color: #475569; line-height: 1.6; margin-bottom: 20px;">
+          உங்கள் விளம்பரம் வெற்றிகரமாக <strong>சூப்பர் அட்மின் ஒப்புதலுக்காக (Super Admin Approval)</strong> அனுப்பப்பட்டுள்ளது.<br><br>
+          போலி விளம்பரங்களைத் தடுத்து தரமான பட்டியலை உறுதி செய்ய, நிர்வாகி சரிபார்த்து சில நிமிடங்களில் <strong>ஒப்புதல் (Approval)</strong> அளித்தவுடன் உங்கள் சொத்து முகப்புப் பக்கத்தில் நேரலையாக அனைவருக்கும் தெரியும்!
+        </p>
+        <button class="post-submit-btn" onclick="closeModal('postAdSuccessModal')" style="width: 100%; max-width: 220px; margin: 0 auto; display: inline-block;">சரி, மகிழ்ச்சி! (Done)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Google Sign-In Modal -->
+  <div class="modal-overlay" id="googleLoginModal">
+    <div class="modal-sheet" style="max-width: 440px;">
+      <div class="modal-header">
+        <div class="modal-title">Google Login / உள்நுழைக</div>
+        <button class="modal-close-btn" onclick="closeModal('googleLoginModal')">✕</button>
+      </div>
+      <div class="modal-body" id="googleLoginBody">
+        <!-- Injected via JS based on login state -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 5.1 Primary Mobile Number Collection Modal (No OTP Needed) -->
+  <div class="modal-overlay" id="userPhoneModal">
+    <div class="modal-sheet" style="max-width: 440px; padding: 0; overflow: hidden; border-radius: 16px;">
+      <div style="background: linear-gradient(135deg, #002f34 0%, #004d40 100%); color: #fff; padding: 20px 24px; position: relative;">
+        <button class="modal-close-btn" style="position: absolute; right: 16px; top: 16px; color: #fff; background: rgba(255,255,255,0.15); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 14px;" onclick="closeModal('userPhoneModal')">✕</button>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+          <span style="font-size: 22px;">📱</span>
+          <div style="font-size: 17px; font-weight: 800;">செல்போன் எண் பதிவு</div>
+        </div>
+        <div style="font-size: 12px; color: #E0F2FE;">இலவச 3 தொடர்புகளைப் பெற உங்கள் மொபைல் எண்ணை உள்ளிடவும்</div>
+      </div>
+      <div class="modal-body" style="padding: 22px 24px;">
+        <form onsubmit="handleUserPhoneSubmit(event)">
+          <div style="font-size: 13px; color: #475569; margin-bottom: 14px; line-height: 1.5;">
+            வணக்கம் <b id="userPhoneModalName" style="color: #0F172A;">பயனரே</b>! உங்கள் Gmail கணக்கு (<span id="userPhoneModalEmail" style="color:#0284C7; font-weight:700;"></span>) வெற்றிகரமாக இணைக்கப்பட்டுள்ளது.
+          </div>
+          <div style="margin-bottom: 16px;">
+            <label style="display: block; font-size: 12.5px; font-weight: 700; color: #1E293B; margin-bottom: 6px;">உங்கள் 10 இலக்க செல்போன் எண் *</label>
+            <div style="display: flex; gap: 8px;">
+              <span style="padding: 11px 12px; background: #F1F5F9; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 14px; font-weight: 700; color: #1E293B;">+91</span>
+              <input type="tel" id="primaryUserPhoneInput" required maxlength="10" placeholder="உதா: 98941 74944" style="flex: 1; padding: 11px 14px; border: 1.5px solid #CBD5E1; border-radius: 8px; font-size: 15px; font-weight: 600;">
+            </div>
+            <div style="font-size: 11.5px; color: #059669; font-weight: 700; margin-top: 6px; display: flex; align-items: center; gap: 4px;">
+              <span>✓</span> OTP தேவையில்லை - ஒருமுறை உள்ளிட்டால் போதுமானது!
+            </div>
+          </div>
+          <button type="submit" style="width: 100%; background: #002f34; color: #fff; border: none; padding: 13px; border-radius: 8px; font-size: 14.5px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 12px rgba(0,47,52,0.25);">
+            🔓 சேமித்து இலவச தொடர்பை பார்க்கவும்
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Razorpay Contact Unlock Modal -->
+  <div class="modal-overlay" id="contactUnlockModal">
+    <div class="modal-sheet" style="max-width: 480px; padding: 0; overflow: hidden; border-radius: 16px;">
+      <div style="background: linear-gradient(135deg, #002f34 0%, #004d40 100%); color: #fff; padding: 22px 24px; position: relative;">
+        <button class="modal-close-btn" style="position: absolute; right: 16px; top: 16px; color: #fff; background: rgba(255,255,255,0.15); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 14px;" onclick="closeModal('contactUnlockModal')">✕</button>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+          <span style="font-size: 22px;">🔒</span>
+          <div style="font-size: 18px; font-weight: 800;">உரிமையாளர் தொடர்பு எண்</div>
+        </div>
+        <div style="font-size: 12px; color: #E0F2FE;">நேரடி நில உரிமையாளரின் செல்போன் & WhatsApp எண்</div>
+      </div>
+      <div class="modal-body" id="contactUnlockBody" style="padding: 20px 24px;">
+        <!-- Injected via JS dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Legal Advice Modal -->
+  <div class="modal-overlay" id="legalAdviceModal">
+    <div class="modal-sheet" style="max-width: 520px; padding: 0; overflow: hidden; border-radius: 16px;">
+      <div style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); color: #fff; padding: 22px 24px; position: relative;">
+        <button class="modal-close-btn" style="position: absolute; right: 16px; top: 16px; color: #fff; background: rgba(255,255,255,0.15); border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; font-size: 14px;" onclick="closeModal('legalAdviceModal')">✕</button>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+          <span style="font-size: 24px;">⚖️</span>
+          <div style="font-size: 18px; font-weight: 800;">வழக்கறிஞர் சட்ட ஆலோசனை</div>
+        </div>
+        <div style="font-size: 12.5px; color: #E2E8F0; line-height: 1.5;">தென்காசி மாவட்ட அனுபவமிக்க வழக்கறிஞர்களின் சொத்து ஆவண சரிபார்ப்பு & வழிகாட்டுதல்</div>
+      </div>
+      <div class="modal-body" style="padding: 22px 24px;">
+        <form id="legalAdviceForm" onsubmit="handleLegalAdviceSubmit(event)">
+          <div class="post-form-row">
+            <label>உங்கள் பெயர் (Your Name)*</label>
+            <input type="text" name="name" required placeholder="உதா: முருகன்">
+          </div>
+
+          <div class="post-form-row">
+            <label>செல்போன் எண் (Mobile Number for Call & WhatsApp)*</label>
+            <input type="tel" name="phone" required placeholder="உதா: 98941 74944">
+          </div>
+
+          <div class="post-form-row">
+            <label>சொத்து உள்ள ஊர் / மாவட்டம் (Property Location)*</label>
+            <input type="text" name="location" required placeholder="உதா: தென்காசி, பாவூர்சத்திரம், சங்கரன்கோவில்">
+          </div>
+
+          <div class="post-form-row">
+            <label>தேவைப்படும் சட்ட சேவை வகை (Service Needed)*</label>
+            <select name="serviceType" style="font-weight: 700;">
+              <option value="பத்திர ஆவண சரிபார்ப்பு">📜 பத்திர ஆவண சரிபார்ப்பு (Document Verification)</option>
+              <option value="பட்டா & சிட்டா பெயர் மாற்றம்">📑 பட்டா & சிட்டா பெயர் மாற்றம் (Patta Transfer)</option>
+              <option value="வில்லங்க சான்றிதழ் ஆய்வு (EC)">🔍 வில்லங்க சான்றிதழ் ஆய்வு (EC Verification)</option>
+              <option value="எல்லை அளவீடு & சர்வே">📐 எல்லை அளவீடு & சர்வே (Land Survey)</option>
+              <option value="DTCP / RERA அப்ரூவல் வழிகாட்டுதல்">🏛️ DTCP / RERA அப்ரூவல் வழிகாட்டுதல்</option>
+              <option value="பொதுவான சட்ட ஆலோசனை">⚖️ பொதுவான ரியல் எஸ்டேட் சட்ட ஆலோசனை</option>
+            </select>
+          </div>
+
+          <div class="post-form-row">
+            <label>கூடுதல் விவரங்கள் / குறிப்பு (Notes)</label>
+            <textarea name="notes" placeholder="சொத்து பற்றிய விபரம் அல்லது உங்கள் சந்தேகங்களை குறிப்பிடவும்..."></textarea>
+          </div>
+
+          <button type="submit" id="submitLegalAdviceBtn" style="width: 100%; background: linear-gradient(135deg, #0F172A, #1E293B); color: #fff; border: 1px solid #F59E0B; padding: 13px; border-radius: 10px; font-size: 15px; font-weight: 800; cursor: pointer; box-shadow: 0 4px 12px rgba(15,23,42,0.3); display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <span>⚖️</span>
+            <span>ஆலோசனை கோருக (Submit Request)</span>
+          </button>
+        </form>
+
+        <div id="legalAdviceSuccessBox" style="display: none; background: #ECFDF5; border: 1.5px solid #86EFAC; border-radius: 12px; padding: 16px; margin-top: 14px; text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 6px;">✅</div>
+          <div style="font-size: 15px; font-weight: 800; color: #065F46; margin-bottom: 6px;">கோரிக்கை வெற்றிகரமாக அனுப்பப்பட்டது!</div>
+          <div style="font-size: 12.5px; color: #064E3B; margin-bottom: 12px;">எங்கள் சட்ட ஆலோசகர் குழு / சூப்பர் அட்மின் விரைவில் உங்களைத் தொடர்பு கொள்வர்.</div>
+          <div style="display: flex; gap: 8px; justify-content: center;">
+            <a href="https://wa.me/919894174944?text=வணக்கம்,%20எனக்கு%20சொத்து%20சட்ட%20ஆலோசனை%20தேவைப்படுகிறது" target="_blank" style="padding: 8px 14px; background: #25D366; color: white; border-radius: 8px; font-size: 12.5px; font-weight: 700; text-decoration: none;">💬 WhatsApp</a>
+            <a href="tel:9894174944" style="padding: 8px 14px; background: #0F172A; color: white; border-radius: 8px; font-size: 12.5px; font-weight: 700; text-decoration: none;">📞 நேரடி அழைப்பு</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Razorpay Official Checkout SDK -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+  <!-- Firebase Official SDK (Compat v10 for robust web auth & Firestore) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+  <!-- JavaScript App Logic -->
+  <script src="js/app.js?v=20260920_v4"></script>
+</body>
+</html>

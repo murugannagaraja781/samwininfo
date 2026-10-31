@@ -1,0 +1,30 @@
+# Enable Rewrite Engine for REST API endpoints
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Handle OPTIONS preflight requests
+    RewriteCond %{REQUEST_METHOD} OPTIONS
+    RewriteRule ^(.*)$ $1 [R=200,L]
+
+    # Explicit Razorpay endpoints
+    RewriteRule ^create-order/?$ create-order.php [QSA,L]
+    RewriteRule ^verify-payment/?$ verify-payment.php [QSA,L]
+
+    # Map /api/properties to /api/properties.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}.php -f
+    RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [QSA,L]
+
+    # Map /api/properties/xyz to /api/properties.php?id=xyz
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^properties/([a-zA-Z0-9_-]+)$ properties.php?id=$1 [QSA,L]
+</IfModule>
+
+# CORS Headers
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With"
+</IfModule>

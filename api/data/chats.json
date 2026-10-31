@@ -1,0 +1,29 @@
+{
+    "conversations": [
+        {
+            "id": "conv_11d95b48fc704effb2c987060f3b8c03",
+            "property_id": "prop_1",
+            "property_title": "Tenkasi Land",
+            "buyer_name": "Ravi",
+            "buyer_phone": "9876543210",
+            "seller_name": "Murugan",
+            "seller_phone": "9894174944",
+            "last_message": "Is this land available?",
+            "last_message_time": "2026-09-20 14:50:03",
+            "created_at": "2026-09-20 14:50:03"
+        }
+    ],
+    "messages": [
+        {
+            "id": "msg_1789908603_575",
+            "conversation_id": "conv_11d95b48fc704effb2c987060f3b8c03",
+            "property_id": "prop_1",
+            "sender_phone": "9876543210",
+            "sender_name": "Ravi",
+            "sender_role": "buyer",
+            "message": "Is this land available?",
+            "is_read": 0,
+            "created_at": "2026-09-20 14:50:03"
+        }
+    ]
+}

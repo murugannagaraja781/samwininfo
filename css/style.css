@@ -1,0 +1,1483 @@
+/* ==========================================================================
+   Tenkasi Dreams Land - OLX Style Responsive Web & Mobile Portal
+   Full Desktop OLX Portal + Seamless Mobile App Layout
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Tamil:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Brand Colors */
+  --primary: #0D47A1;
+  --primary-blue: #1565C0;
+  --primary-light: #E3F2FD;
+  --primary-surface: #F0F6FF;
+  
+  --accent-gold: #FFB300;
+  --accent-teal: #00BFA5;
+  --olx-yellow: #FFCE32;
+  --olx-navy: #002F34;
+  --olx-border: #D8DFE0;
+  --olx-text-sec: #406367;
+  --olx-text-muted: #7F9799;
+
+  --bg-page: #F2F4F5;
+  --surface: #FFFFFF;
+  --surface-alt: #F8FAFC;
+  --border: #E2E8F0;
+  --border-light: #F1F5F9;
+
+  --text-main: #0F172A;
+  --text-primary: #1E293B;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+
+  --success: #16A34A;
+  --success-light: #DCFCE7;
+  --danger: #DC2626;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 14px rgba(13, 71, 161, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.06);
+
+  --font-sans: 'Plus Jakarta Sans', 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.45;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   GLOBAL APP WRAPPER (Full Width Responsive)
+   ========================================================================== */
+.site-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-xl {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ==========================================================================
+   1. OLX DESKTOP & MOBILE HEADER
+   ========================================================================== */
+.site-header {
+  background: #FFFFFF;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-main-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 0;
+}
+
+.header-top-mobile-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* Brand Logo */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header-logo-img {
+  height: 40px;
+  object-fit: contain;
+}
+
+.brand-text-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--primary);
+  line-height: 1.15;
+}
+
+.brand-subtitle {
+  font-size: 9px;
+  font-weight: 800;
+  color: var(--text-secondary);
+  letter-spacing: 0.6px;
+}
+
+/* Location Selector (OLX Style) */
+.header-location-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 42px;
+  padding: 0 10px;
+  background: #FFFFFF;
+  border: 1.8px solid var(--olx-navy);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  flex-shrink: 0;
+  max-width: 170px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--olx-navy);
+  transition: all 0.2s;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.header-location-box:hover {
+  border-color: var(--primary-blue);
+  background: var(--primary-surface);
+}
+
+.header-location-box svg {
+  color: var(--olx-navy);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.header-location-text {
+  max-width: 110px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.location-arrow {
+  font-size: 10px;
+  color: var(--olx-navy);
+  flex-shrink: 0;
+}
+
+/* Wide Search Bar (OLX Style) */
+.header-search-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 42px;
+  border: 1.8px solid var(--olx-navy);
+  border-radius: var(--radius-sm);
+  background: #FFFFFF;
+  overflow: hidden;
+  transition: border-color 0.2s;
+  min-width: 0;
+}
+
+.header-search-bar:focus-within {
+  border-color: var(--primary-blue);
+}
+
+.header-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0 12px;
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-primary);
+  min-width: 0;
+}
+
+.header-search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.header-search-btn {
+  background: var(--olx-navy);
+  border: none;
+  width: 44px;
+  height: 100%;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.header-search-btn:hover {
+  background: var(--primary-blue);
+}
+
+/* Header Right Actions */
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 800;
+  background: var(--primary-light);
+  color: var(--primary);
+  border: 1px solid #BFDBFE;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.lang-btn:hover {
+  background: #DBEAFE;
+}
+
+/* Google Login Header Button */
+.google-login-btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 800;
+  background: #FFFFFF;
+  color: #1F2937;
+  border: 1.5px solid #CBD5E1;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.google-login-btn:hover {
+  border-color: #94A3B8;
+  background: #F8FAFC;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.google-g-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.admin-nav-btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #F1F5F9;
+  color: #1E293B;
+  border: 1px solid #CBD5E1;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.admin-nav-btn:hover {
+  background: #E2E8F0;
+}
+
+/* OLX Signature Post Ad Button */
+.btn-post-ad-olx {
+  background: linear-gradient(135deg, #FFCE32 0%, #FFB300 100%);
+  color: var(--olx-navy);
+  font-size: 13px;
+  font-weight: 900;
+  padding: 0 14px;
+  height: 40px;
+  border-radius: 20px;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15), 0 0 0 1.5px var(--olx-navy);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+/* Responsive Mobile Header Tweaks */
+@media (max-width: 768px) {
+  .header-main-row {
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    padding: 8px 0;
+  }
+
+  .header-top-mobile-group {
+    width: auto;
+    flex: 1;
+    justify-content: flex-start;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .header-location-box {
+    height: 34px;
+    padding: 0 6px;
+    max-width: 115px;
+    font-size: 11.5px;
+    border-width: 1.5px;
+  }
+
+  .header-location-text {
+    max-width: 70px;
+  }
+
+  .header-right-actions {
+    margin-left: auto;
+    gap: 6px;
+  }
+
+  .btn-post-ad-olx {
+    display: none; /* Hide on mobile header; bottom nav has + button */
+  }
+
+  .admin-btn-text {
+    display: none; /* Save space on mobile */
+  }
+
+  .admin-nav-btn {
+    padding: 4px 6px;
+    font-size: 13px;
+  }
+
+  .lang-btn {
+    padding: 4px 7px;
+    font-size: 11px;
+  }
+
+  .header-search-bar {
+    width: 100%;
+    flex: none;
+    order: 3;
+    height: 38px;
+    border-width: 1.5px;
+  }
+
+  .header-search-input {
+    font-size: 12.5px;
+    padding: 0 10px;
+  }
+
+  .header-search-btn {
+    width: 38px;
+  }
+}
+
+.btn-post-ad-olx:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   2. CATEGORIES RIBBON BAR (OLX Style Desktop Navbar)
+   ========================================================================== */
+.categories-ribbon {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.categories-ribbon::-webkit-scrollbar {
+  display: none;
+}
+
+.categories-ribbon-inner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 8px 0;
+  white-space: nowrap;
+}
+
+.ribbon-all-btn {
+  font-size: 13.5px;
+  font-weight: 900;
+  color: var(--olx-navy);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 4px 0;
+  text-transform: uppercase;
+}
+
+.ribbon-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ribbon-link:hover, .ribbon-link.active {
+  color: var(--primary-blue);
+  background: var(--primary-light);
+  font-weight: 700;
+}
+
+.ribbon-badge-tool {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #FFFFFF;
+}
+
+.ribbon-badge-purple {
+  background: #7E22CE;
+}
+
+.ribbon-badge-green {
+  background: #059669;
+}
+
+/* ==========================================================================
+   3. DESKTOP HERO & QUICK SERVICES SECTION
+   ========================================================================== */
+.hero-showcase-section {
+  padding: 18px 0 12px 0;
+}
+
+.hero-desktop-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 992px) {
+  .hero-desktop-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.hero-main-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  background: linear-gradient(135deg, #0D47A1, #1565C0);
+  cursor: pointer;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-side-tools {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.side-tool-card {
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  color: #FFFFFF;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.side-tool-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.side-tool-card.card-buyer-demand {
+  background: linear-gradient(135deg, #581C87 0%, #7E22CE 60%, #9333EA 100%);
+}
+
+.side-tool-card.card-land-calc {
+  background: linear-gradient(135deg, #065F46 0%, #047857 60%, #059669 100%);
+}
+
+.side-tool-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.side-tool-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.side-tool-badge {
+  font-size: 10px;
+  font-weight: 900;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.badge-yellow {
+  background: #FBBF24;
+  color: #78350F;
+}
+
+.badge-white {
+  background: rgba(255,255,255,0.25);
+  color: #FFFFFF;
+}
+
+.side-tool-title {
+  font-size: 15px;
+  font-weight: 900;
+  margin-bottom: 2px;
+}
+
+.side-tool-sub {
+  font-size: 11.5px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   4. PHOTOGRAPHIC CATEGORIES BAR (Balanced 6 Cards)
+   ========================================================================== */
+.category-strip-section {
+  padding: 10px 0 16px 0;
+}
+
+.category-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .category-strip-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.cat-box {
+  background: #FFFFFF;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.cat-box:hover, .cat-box.active {
+  border-color: var(--primary-blue);
+  box-shadow: 0 4px 14px rgba(21, 101, 192, 0.18);
+  transform: translateY(-2px);
+}
+
+.cat-box.active {
+  background: var(--primary-surface);
+  border-width: 2px;
+}
+
+.cat-box-img-wrap {
+  width: 100%;
+  height: 72px;
+  background: #F1F5F9;
+  overflow: hidden;
+}
+
+.cat-box-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.cat-box:hover .cat-box-img-wrap img {
+  transform: scale(1.05);
+}
+
+.cat-box-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-main);
+  padding: 6px 4px;
+  line-height: 1.2;
+}
+
+.cat-box.active .cat-box-label {
+  color: var(--primary-blue);
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   5. VERIFICATION TRUST BANNER
+   ========================================================================== */
+.trust-banner-section {
+  padding: 4px 0 16px 0;
+}
+
+.trust-banner-card {
+  background: linear-gradient(90deg, #F0F7FF 0%, #E0F2FE 100%);
+  border: 1.5px solid #BAE6FD;
+  border-radius: var(--radius-lg);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.trust-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.trust-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  border: 1px solid #7DD3FC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.trust-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0369A1;
+}
+
+.trust-sub {
+  font-size: 12px;
+  color: #0284C7;
+  font-weight: 500;
+}
+
+.trust-cta-btn {
+  background: var(--primary);
+  color: #FFFFFF;
+  font-size: 12.5px;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.trust-cta-btn:hover {
+  background: var(--primary-blue);
+}
+
+/* ==========================================================================
+   6. FEATURED CAROUSEL SECTION (4-Col Desktop / Snap Mobile)
+   ========================================================================== */
+.featured-showcase-section {
+  padding: 12px 0 20px 0;
+}
+
+.section-headline-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.section-main-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-main-title svg {
+  color: var(--primary-blue);
+  width: 22px;
+  height: 22px;
+}
+
+.featured-desktop-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 576px) {
+  .featured-desktop-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .featured-desktop-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Card Styling (Featured & OLX Standard) */
+.olx-property-card {
+  background: #FFFFFF;
+  border: 1px solid var(--olx-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+
+.olx-property-card:hover {
+  border-color: var(--primary-blue);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+/* Premium Card Distinction */
+.olx-property-card.premium-card {
+  border: 2px solid #D97706;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.22);
+}
+
+.olx-property-card.premium-card:hover {
+  border-color: #B45309;
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.35);
+}
+
+.card-top-thumbnail {
+  height: 155px;
+  background: #E2E8F0;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-top-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.olx-property-card:hover .card-top-thumbnail img {
+  transform: scale(1.04);
+}
+
+/* Badges on Card */
+.badge-hot-tag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--olx-yellow);
+  color: var(--olx-navy);
+  font-size: 9.5px;
+  font-weight: 900;
+  padding: 3px 6px;
+  border-radius: 2px;
+  letter-spacing: 0.5px;
+}
+
+.badge-premium-tag {
+  position: absolute;
+  top: 8px;
+  right: 44px;
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  color: #FFFFFF;
+  font-size: 9.5px;
+  font-weight: 900;
+  padding: 3px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  z-index: 2;
+}
+
+.badge-free-tag {
+  position: absolute;
+  top: 8px;
+  right: 44px;
+  background: #10B981;
+  color: #FFFFFF;
+  font-size: 9px;
+  font-weight: 800;
+  padding: 3px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  z-index: 2;
+}
+
+.badge-verified-tag {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(0, 47, 52, 0.88);
+  color: #FFFFFF;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.card-favorite-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.92);
+  border: none;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: #64748B;
+  transition: all 0.2s;
+}
+
+.card-favorite-icon.active {
+  color: #E53935;
+}
+
+/* Card Body (OLX Layout) */
+.card-content-wrap {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.card-price-text {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--olx-navy);
+  margin-bottom: 2px;
+  letter-spacing: -0.3px;
+}
+
+.card-price-text.premium-price {
+  color: #B45309;
+}
+
+.card-specs-line {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--olx-navy);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-title-text {
+  font-size: 13px;
+  color: var(--olx-text-sec);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 12px;
+}
+
+.card-footer-info {
+  border-top: 1px solid #F1F5F9;
+  padding-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--olx-text-muted);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   7. MAIN PROPERTY GRID FEED (4-Column OLX Grid)
+   ========================================================================== */
+.main-feed-section {
+  padding: 10px 0 35px 0;
+}
+
+.feed-grid-4col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .feed-grid-4col {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  .feed-grid-4col {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+}
+
+/* ==========================================================================
+   8. OLX DESKTOP FOOTER
+   ========================================================================== */
+.site-footer {
+  background: #EBEEEF;
+  color: var(--olx-navy);
+  margin-top: auto;
+  border-top: 1px solid #D8DFE0;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  padding: 30px 0;
+}
+
+@media (min-width: 768px) {
+  .footer-top-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.footer-col-title {
+  font-size: 13.5px;
+  font-weight: 900;
+  color: var(--olx-navy);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-links-list a {
+  color: var(--olx-text-sec);
+  text-decoration: none;
+  font-size: 12.5px;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.footer-links-list a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.footer-bottom-bar {
+  background: var(--olx-navy);
+  color: #FFFFFF;
+  padding: 14px 0;
+  font-size: 12px;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom-inner {
+    flex-direction: row;
+  }
+}
+
+/* ==========================================================================
+   9. MOBILE STICKY BOTTOM NAVIGATION BAR (Visible on Mobile Only)
+   ========================================================================== */
+.mobile-bottom-nav {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #FFFFFF;
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
+  align-items: center;
+  justify-content: space-around;
+  z-index: 999;
+}
+
+@media (min-width: 769px) {
+  .mobile-bottom-nav {
+    display: none !important; /* Completely hidden on desktop */
+  }
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  gap: 2px;
+  flex: 1;
+  height: 100%;
+}
+
+.nav-item.active {
+  color: var(--primary-blue);
+  font-weight: 800;
+}
+
+.nav-item svg {
+  width: 22px;
+  height: 22px;
+}
+
+.nav-post-ad-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFCE32, #FFB300);
+  color: var(--olx-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 900;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  margin-top: -20px;
+  cursor: pointer;
+  border: 3px solid #FFFFFF;
+}
+
+/* ==========================================================================
+   10. INTERACTIVE MODALS (Full-Screen Mobile / Centered Desktop)
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-sheet {
+  background: #FFFFFF;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .modal-overlay {
+    align-items: center;
+    padding: 20px;
+  }
+  .modal-sheet {
+    border-radius: 16px;
+    max-height: 85vh;
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+  }
+  .modal-overlay.active .modal-sheet {
+    transform: scale(1);
+  }
+}
+
+.modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.modal-close-btn {
+  background: #F1F5F9;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+.modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Detail Modal Specifics */
+.detail-gallery {
+  width: 100%;
+  height: 260px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #E2E8F0;
+  margin-bottom: 16px;
+}
+
+.detail-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-price {
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.detail-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.detail-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  background: #F8FAFC;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  margin-bottom: 16px;
+}
+
+.detail-spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-spec-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.detail-spec-val {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.detail-actions-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn-call {
+  background: var(--primary-blue);
+  color: #FFFFFF;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+}
+
+/* Land Calculator Table */
+.calc-input-group {
+  margin-bottom: 14px;
+}
+
+.calc-input-group label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.calc-input-group input, .calc-input-group select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.calc-results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 14px;
+  background: #F8FAFC;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.calc-results-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  font-size: 13.5px;
+}
+
+.calc-results-table td:first-child {
+  font-weight: 600;
+  color: #475569;
+}
+
+.calc-results-table td:last-child {
+  font-weight: 800;
+  color: var(--text-main);
+  text-align: right;
+}
+
+/* Buyer Demand Cards */
+.buyer-req-card {
+  background: #F8FAFC;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.req-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.req-badge {
+  background: #EDE9FE;
+  color: #6D28D9;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.req-budget {
+  font-size: 14px;
+  font-weight: 800;
+  color: #047857;
+}
+
+.req-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.req-location {
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.req-contact-btn {
+  margin-top: 10px;
+  background: #2563EB;
+  color: #FFFFFF;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+}
+
+/* Post Ad Form */
+.post-form-row {
+  margin-bottom: 14px;
+}
+
+.post-form-row label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.post-form-row input, .post-form-row select, .post-form-row textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.post-form-row textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.post-submit-btn {
+  width: 100%;
+  background: var(--primary);
+  color: #FFFFFF;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.post-submit-btn:hover {
+  background: var(--primary-blue);
+}

@@ -1,0 +1,17 @@
+{
+  "auth": {
+    "authorizedDomains": [
+      "localhost",
+      "tenkasidreams.com",
+      "www.tenkasidreams.com",
+      "tenkasi-dreams.firebaseapp.com",
+      "tenkasi-dreams.web.app"
+    ],
+    "providers": {
+      "googleSignIn": {
+        "oAuthBrandDisplayName": "Tenkasi Dreams",
+        "supportEmail": "tenkasidreams@gmail.com"
+      }
+    }
+  }
+}

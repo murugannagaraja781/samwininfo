@@ -1,0 +1,18 @@
+[
+    {
+        "id": "notif_1789992597_240",
+        "type": "new_property_ad",
+        "title": "🔔 புதிய விளம்பரம் அப்ரூவலுக்கு வந்துள்ளது!",
+        "message": "Karthik Test (9876543210) என்பவர் 'Test Agricultural Land for Realtime Alert' (₹1,500,000) என்ற புதிய விளம்பரத்தை பதிவிட்டுள்ளார். சரிபார்த்து அப்ரூவல் வழங்கவும்.",
+        "propertyId": "prop_1789992597_648",
+        "propertyTitle": "Test Agricultural Land for Realtime Alert",
+        "sellerName": "Karthik Test",
+        "sellerPhone": "9876543210",
+        "price": 1500000,
+        "propertyType": "Land",
+        "location": "Tenkasi Main Road",
+        "timestamp": "2026-09-21T14:09:57+02:00",
+        "isRead": true,
+        "status": "deleted"
+    }
+]

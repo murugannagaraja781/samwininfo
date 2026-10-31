@@ -1,0 +1,58 @@
+[
+  {
+    "id": "req_1",
+    "userName": "முத்துராமன் (Muthuraman)",
+    "userPhone": "+91 98421 55678",
+    "propertyType": "Land",
+    "targetLocation": "Tenkasi Bypass / Courtallam Road",
+    "budgetMin": 1200000,
+    "budgetMax": 2000000,
+    "preferredSize": "5 முதல் 8 சென்ட் (15 - 25 குழி)",
+    "facingPreference": "East / North",
+    "description": "DTCP அல்லது பஞ்சாயத்து அப்ரூவல் உள்ள குடியிருப்பு மனை தேவை. தார் ரோடு மற்றும் EB வசதி இருக்க வேண்டும். உடனடி ரொக்கப் பதிவு.",
+    "postedDate": "2026-09-19T06:30:00Z",
+    "status": "active"
+  },
+  {
+    "id": "req_2",
+    "userName": "கந்தசாமி விவசாயி (Kandasamy)",
+    "userPhone": "+91 97892 44321",
+    "propertyType": "Farmland",
+    "targetLocation": "Kadayanallur / Surandai",
+    "budgetMin": 2500000,
+    "budgetMax": 4500000,
+    "preferredSize": "1 முதல் 3 ஏக்கர் (300 - 900 குழி)",
+    "facingPreference": "Any",
+    "description": "விவசாய இலவச EB இணைப்புடன் நல்ல தண்ணீர் ஊற்றுள்ள கிணறு அல்லது போர்வெல் வசதியுடன் கூடிய நஞ்சை/புஞ்சை தோட்டம் தேவை.",
+    "postedDate": "2026-09-19T01:15:00Z",
+    "status": "active"
+  },
+  {
+    "id": "req_3",
+    "userName": "சுரேஷ் குமார் (Suresh Kumar)",
+    "userPhone": "+91 94433 88123",
+    "propertyType": "Shop",
+    "targetLocation": "Tenkasi Main Bazaar / Old Bus Stand",
+    "budgetMin": 8000,
+    "budgetMax": 15000,
+    "preferredSize": "200 - 400 Sq.Ft",
+    "facingPreference": "Main Road Frontage",
+    "description": "மொபைல்/எலக்ட்ரானிக்ஸ் கடை வைக்க மெயின் பஜார் பகுதியில் தரைத்தள கடை (Ground Floor Shop) வாடகைக்கு தேவை. ஷட்டர் & EB வசதி முக்கியம்.",
+    "postedDate": "2026-09-18T11:00:00Z",
+    "status": "active"
+  },
+  {
+    "id": "req_4",
+    "userName": "செல்வி லட்சுமி (Selvi Lakshmi)",
+    "userPhone": "+91 99420 11987",
+    "propertyType": "Rental",
+    "targetLocation": "Tenkasi Housing Board / NGO Colony",
+    "budgetMin": 6000,
+    "budgetMax": 10000,
+    "preferredSize": "2 BHK Individual House",
+    "facingPreference": "North / East",
+    "description": "குடும்பத்துடன் வசிக்க நல்ல குடிநீர் வசதி, கார் பார்க்கிங் வசதியுடன் கூடிய 2 BHK தனி வீடு வாடகைக்கு தேவை.",
+    "postedDate": "2026-09-17T14:40:00Z",
+    "status": "active"
+  }
+]

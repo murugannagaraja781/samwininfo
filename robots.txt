@@ -1,0 +1,19 @@
+# ==========================================================
+# Robots.txt for Ads - Mithra Digital Solutions
+# Website: https://ads.mithradigitalsolutions.com/
+# ==========================================================
+
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+
+# Disallow private admin portal & backend API from being crawled
+Disallow: /admin/
+Disallow: /api/
+Disallow: /checkout.php
+
+# Sitemap declaration for Google, Bing, Yahoo & other crawlers
+Sitemap: https://ads.mithradigitalsolutions.com/sitemap.xml
