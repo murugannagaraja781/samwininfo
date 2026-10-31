@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
@@ -66,8 +66,8 @@ define('DB_USER', $_ENV['DB_USER'] ?? 'root');
 define('DB_PASS', $_ENV['DB_PASS'] ?? '');
 
 // Super Admin Credentials
-define('SUPER_ADMIN_USER', $_ENV['SUPER_ADMIN_USER'] ?? 'admin3');
-define('SUPER_ADMIN_PASS', $_ENV['SUPER_ADMIN_PASS'] ?? '000003');
+define('SUPER_ADMIN_USER', $_ENV['SUPER_ADMIN_USER'] ?? 'admin');
+define('SUPER_ADMIN_PASS', $_ENV['SUPER_ADMIN_PASS'] ?? 'samwin123');
 
 // White-Label Branding Constants
 define('APP_NAME', $_ENV['APP_NAME'] ?? 'SamWin');
