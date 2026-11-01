@@ -6,7 +6,7 @@ param(
 # Deploy SamWin Info to Live Server via FTP
 # ==========================================================
 
-$ftpUser = "ftb1@samwin.info"
+$ftpUser = "deploy@samwin.info"
 $ftpPass = "Samwin@2026"
 $ftpPort = 21
 
