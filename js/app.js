@@ -1,4 +1,4 @@
-﻿/**
+/**
  * SamWin Land - Web App Engine
  * Replicating Desktop OLX Portal Layout & Mobile App Layout
  */
@@ -1074,9 +1074,9 @@ function triggerFirebaseGoogleSignIn() {
         if (error.code === 'auth/unauthorized-domain') {
           const fallback = confirm(
             '⚠️ Firebase அங்கீகரிப்பு அறிவிப்பு:\n\n' +
-            'உங்கள் டொமைன் (tenkasidreams.com) இன்னும் Firebase Console-ல் "Authorized domains" பட்டியலில் சேர்க்கப்படவில்லை.\n\n' +
+            'உங்கள் டொமைன் (samwin.info) இன்னும் Firebase Console-ல் "Authorized domains" பட்டியலில் சேர்க்கப்படவில்லை.\n\n' +
             'இதை சரிசெய்ய:\n' +
-            'Firebase Console -> Authentication -> Settings -> Authorized domains -> Add "tenkasidreams.com"\n\n' +
+            'Firebase Console -> Authentication -> Settings -> Authorized domains -> Add "samwin.info"\n\n' +
             'தற்போது நீங்கள் சோதனை செய்ய உங்கள் Gmail முகவரியை நேரடியாக உள்ளிட்டு உள்நுழைய விரும்புகிறீர்களா?'
           );
           if (fallback) {
@@ -1122,8 +1122,8 @@ function handleSignOutWeb() {
 }
 
 function handleGoogleSignInWeb(email, name, phone, photoUrl) {
-  const cleanEmail = email || 'tenkasidreams@gmail.com';
-  const cleanName = name || 'Tenkasi User';
+  const cleanEmail = email || 'info@samwininfo.com';
+  const cleanName = name || 'SamWin User';
 
   const existingUser = JSON.parse(localStorage.getItem('tenkasi_user') || 'null');
   const existingPhone = phone || ((existingUser && existingUser.phone) ? existingUser.phone : '');
@@ -1530,7 +1530,7 @@ async function triggerRazorpayCheckout(propId) {
       order_id: orderData.order_id,
       prefill: {
         name: state.user?.name || 'Customer',
-        email: state.user?.email || 'customer@tenkasidreams.com',
+        email: state.user?.email || 'customer@samwin.info',
         contact: state.user?.phone || '9894174944'
       },
       notes: {
