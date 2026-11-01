@@ -15,7 +15,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.antigravity.realestate.real_estate_app"
+    namespace = "com.samwininfo.app"
     compileSdk = 36
     ndkVersion = "28.2.13676358"
 
@@ -29,12 +29,12 @@ android {
 
     defaultConfig {
         if (isAdminBuild) {
-            applicationId = "com.antigravity.realestate.admin"
-            manifestPlaceholders["appName"] = "Ads Admin"
+            applicationId = "com.samwininfo.admin"
+            manifestPlaceholders["appName"] = "SamWin Admin"
             manifestPlaceholders["appIcon"] = "@mipmap/ic_launcher_admin"
         } else {
-            applicationId = "com.antigravity.realestate.real_estate_app"
-            manifestPlaceholders["appName"] = "Ads"
+            applicationId = "com.samwininfo.app"
+            manifestPlaceholders["appName"] = "SamWin"
             manifestPlaceholders["appIcon"] = "@mipmap/ic_launcher"
         }
         minSdk = flutter.minSdkVersion

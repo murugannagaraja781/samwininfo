@@ -55,8 +55,8 @@
 
 | # | குறைபாடு (Issue) | விவரம் (Details) | செய்ய வேண்டிய தீர்வு (Action Required) |
 |---|---|---|---|
-| **4.1** | **App Name (Launcher Title)** | `android/app/build.gradle.kts`-ல் ஆப் பெயர் வெறும் **"Ads"** என்று உள்ளது. மொபைலில் Install செய்யும்போது "Ads" என்றே காட்டும். | இதனை **`SamWin`** அல்லது **`SamWin Info`** என மாற்ற வேண்டும். |
-| **4.2** | **Package Name (Application ID)** | தற்போதைய Application ID: `com.antigravity.realestate.real_estate_app`. | Play Store-ல் வெளியிடும்போது பிராண்டட் அடையாளமாக **`com.samwininfo.app`** என மாற்றப்பட வேண்டும். |
+| **4.1** | **App Name (Launcher Title)** | `android/app/build.gradle.kts`-ல் ஆப் பெயர் **`SamWin`** என வெற்றிகரமாக மாற்றப்பட்டது! | ✅ முடிந்தது (Completed) |
+| **4.2** | **Package Name (Application ID)** | Package Name அதிகாரப்பூர்வமாக **`com.samwininfo.app`** (மற்றும் Admin-க்கு `com.samwininfo.admin`) என மாற்றப்பட்டது! | ✅ முடிந்தது (Completed) |
 | **4.3** | **Firebase Push Notifications (google-services.json)** | `android/app/google-services.json` கோப்பு இன்னும் பழைய `tenkasi-dreams` திட்டத்துடன் இணைக்கப்பட்டுள்ளது. | SamWin Info-க்கு புதிய Firebase Project உருவாக்கி புதிய `google-services.json` வைக்க வேண்டும்; இல்லையேல் Admin Notifications வராது. |
 | **4.4** | **Release Keystore Password** | `build.gradle.kts`-ல் signing config பாஸ்வேர்டு பழைய `TenkasiDreams@2026` என உள்ளது. | SamWin-க்கு பிரத்யேகமாக புதிய Production Keystore உருவாக்கப்பட வேண்டும். |
 | **4.5** | **Account Deletion Link** | `legal_policy_screen.dart`-ல் கணக்கு நீக்கத்திற்கு `tenkasidreams@gmail.com`-க்கு அனுப்பச் சொல்கிறது. Google Play கொள்கைப்படி இது தவறாகக் கருதப்படலாம். | `info@samwininfo.com` அல்லது இணையதளத்தின் `https://samwin.info/delete-account.html` பக்கத்திற்கு இணைக்க வேண்டும். |

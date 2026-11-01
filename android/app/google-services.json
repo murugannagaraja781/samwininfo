@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:472022657503:android:a8cff0e52efdb530a63c6a",
         "android_client_info": {
-          "package_name": "com.antigravity.realestate.real_estate_app"
+          "package_name": "com.samwininfo.app"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "472022657503-b6qac2o300kcgtd7o31ojmm2l03avuvm.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.antigravity.realestate.real_estate_app",
+            "package_name": "com.samwininfo.app",
             "certificate_hash": "a504ffb655a0137d36eb7cfc76b74acdd7b0d06f"
           }
         },
@@ -46,7 +46,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:472022657503:android:a8cff0e52efdb530a63c6b",
         "android_client_info": {
-          "package_name": "com.antigravity.realestate.admin"
+          "package_name": "com.samwininfo.admin"
         }
       },
       "oauth_client": [],

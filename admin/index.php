@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
@@ -2042,12 +2042,12 @@ $v = time();
                 பொதுமக்கள், வாங்குபவர்கள் மற்றும் விற்பனையாளர்கள் பயன்படுத்தும் முக்கிய ஆண்ட்ராய்டு செயலி.
               </div>
               <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px; font-family: monospace;">
-                ஃபைல்: Ads.apk | பேக்கேஜ்: com.antigravity.realestate.real_estate_app
+                ஃபைல்: SamWin.apk | பேக்கேஜ்: com.samwininfo.app
               </div>
             </div>
           </div>
           <div style="display: flex; gap: 8px;">
-            <a href="/Ads.apk" download="SamWin.apk" class="btn btn-emerald" style="padding: 9px 16px; font-size: 13px; font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 6px;">
+            <a href="/SamWin.apk" download="SamWin.apk" class="btn btn-emerald" style="padding: 9px 16px; font-size: 13px; font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 6px;">
               <span>⬇️ பதிவிறக்கு (Download)</span>
             </a>
             <button type="button" class="btn btn-secondary" onclick="copyApkDownloadLink('client')" style="padding: 9px 12px; font-size: 12px;" title="இணைப்பை நகலெடு">
@@ -2064,19 +2064,19 @@ $v = time();
             <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(245, 158, 11, 0.25); display: flex; align-items: center; justify-content: center; font-size: 22px;">🛡️</div>
             <div>
               <div style="font-size: 16px; font-weight: 800; color: #fbbf24; display: flex; align-items: center; gap: 8px;">
-                <span>Ads Admin - சூப்பர் அட்மின் செயலி (Admin App)</span>
+                <span>SamWin Admin - சூப்பர் அட்மின் செயலி (Admin App)</span>
                 <span class="badge badge-gold" style="font-size: 10px;">v1.0.0</span>
               </div>
               <div style="font-size: 12.5px; color: #cbd5e1; margin-top: 3px;">
                 அட்மின்கள் மொபைல் மூலமாகவே விளம்பரங்களை அங்கீகரிக்க, எடிட் செய்ய மற்றும் நிர்வகிக்க பிரத்யேக ஆப்.
               </div>
               <div style="font-size: 11px; color: var(--text-muted); margin-top: 4px; font-family: monospace;">
-                ஃபைல்: AdsAdmin.apk | பேக்கேஜ்: com.antigravity.realestate.admin
+                ஃபைல்: SamWinAdmin.apk | பேக்கேஜ்: com.samwininfo.admin
               </div>
             </div>
           </div>
           <div style="display: flex; gap: 8px;">
-            <a href="/AdsAdmin.apk" download="SamWinAdmin.apk" class="btn btn-gold" style="padding: 9px 16px; font-size: 13px; font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 6px;">
+            <a href="/SamWinAdmin.apk" download="SamWinAdmin.apk" class="btn btn-gold" style="padding: 9px 16px; font-size: 13px; font-weight: 800; text-decoration: none; display: flex; align-items: center; gap: 6px;">
               <span>⬇️ பதிவிறக்கு (Download)</span>
             </a>
             <button type="button" class="btn btn-secondary" onclick="copyApkDownloadLink('admin')" style="padding: 9px 12px; font-size: 12px;" title="இணைப்பை நகலெடு">
