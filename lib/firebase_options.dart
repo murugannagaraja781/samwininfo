@@ -42,11 +42,11 @@ class DefaultFirebaseOptions {
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDNP_ZzSOLgoaD5ft-78MTflyxsv9ONp-Q',
-    appId: '1:472022657503:android:a8cff0e52efdb530a63c6a',
-    messagingSenderId: '472022657503',
-    projectId: 'tenkasi-dreams',
-    storageBucket: 'tenkasi-dreams.firebasestorage.app',
+    apiKey: 'AIzaSyBK1ouok3JRHkOChqMun7GjHUA1C6Oh3ns',
+    appId: '1:798773684536:android:557d8c272f5cdb13f039cd',
+    messagingSenderId: '798773684536',
+    projectId: 'samwin-info',
+    storageBucket: 'samwin-info.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
